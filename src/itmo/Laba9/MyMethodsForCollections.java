@@ -6,22 +6,9 @@ public class MyMethodsForCollections
 {
     public static List<Object> uniqueObjects (List<Object> list1)
     {
-        HashSet<Object> set1 = new HashSet<>();
+        HashSet<Object> set1 = new HashSet<Object>(list1);
 
-        for (Object el : list1)
-        {
-            set1.add(el);
-        }
-
-        List<Object> list2 = new ArrayList<Object>();
-
-        for (Object el : set1)
-        {
-            list2.add(el);
-        }
-
-        Collections.sort(list2, Collections.reverseOrder());
-        Collections.reverse(list2);
+        List<Object> list2 = new ArrayList<>(set1);
 
         return list2;
     }
